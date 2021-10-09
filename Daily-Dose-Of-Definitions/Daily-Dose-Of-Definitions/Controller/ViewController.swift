@@ -45,6 +45,7 @@ class ViewController: UIViewController {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .blue
+        view.layer.cornerRadius = 30
         return view
     }()
     

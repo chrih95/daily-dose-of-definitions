@@ -16,7 +16,7 @@ class SearchDefinitionsViewController: UIViewController, UITableViewDataSource {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.dataSource = self
-        tableView.backgroundColor = .brown
+        tableView.backgroundColor = UIColor(named: "LightGray")
         return tableView
     }()
 
@@ -40,7 +40,7 @@ class SearchDefinitionsViewController: UIViewController, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.contentView.backgroundColor = .brown
+        cell.contentView.backgroundColor = UIColor(named: "LightGray")
         return cell
     }
     

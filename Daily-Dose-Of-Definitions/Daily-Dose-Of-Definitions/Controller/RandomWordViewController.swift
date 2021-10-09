@@ -25,7 +25,7 @@ class RandomWordViewController: UIViewController {
     }
     
     private func setUpUI() {
-        view.backgroundColor = .systemPurple
+        view.backgroundColor = UIColor(named: "LightGray")
         
         view.addSubview(label)
         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */; };
 		AA39BD1F271118B400FD8787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD1E271118B400FD8787 /* AppDelegate.swift */; };
 		AA39BD21271118B400FD8787 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD20271118B400FD8787 /* SceneDelegate.swift */; };
 		AA39BD23271118B400FD8787 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD22271118B400FD8787 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		AA39BD1B271118B400FD8787 /* Daily-Dose-Of-Definitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Dose-Of-Definitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA39BD1E271118B400FD8787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA39BD20271118B400FD8787 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		AA39BD332711EA9B00FD8787 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA39BD23271118B400FD8787 /* ViewController.swift in Sources */,
+				AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */,
 				AA39BD372711EDC100FD8787 /* RandomWordViewController.swift in Sources */,
 				AA39BD392711EE3E00FD8787 /* SearchDefinitionsViewController.swift in Sources */,
 				AA39BD1F271118B400FD8787 /* AppDelegate.swift in Sources */,

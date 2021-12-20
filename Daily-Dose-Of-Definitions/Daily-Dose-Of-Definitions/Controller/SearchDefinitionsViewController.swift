@@ -7,96 +7,76 @@
 
 import UIKit
 
-class SearchDefinitionsViewController: UIViewController, UITableViewDataSource {
+protocol SearchDefinitionsDelegate: AnyObject {
+    func searchDefinitions(forWord word: String?)
+}
+
+class SearchDefinitionsViewController: UIViewController {
     
     //MARK: - Properties
     
-    let searchTextField: UITextField = {
-       let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.textColor = .black
-        textField.placeholder = "Find a word..."
-        textField.backgroundColor = UIColor(named: "LightGray")
-        textField.layer.cornerRadius = 10
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 30))
-        textField.attributedPlaceholder = NSAttributedString(string:"Find a word...", attributes: [NSAttributedString.Key.foregroundColor: .lightGray as UIColor])
-        textField.leftViewMode = .always
-        return textField
-    }()
+    var selectedWordResults: [WordResults]?
+    var selectedWord: String?
     
-    let searchButton: UIButton = {
-       let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Search", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.tintColor = UIColor(named: "DarkGray")
-        button.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
-        return button
-    }()
+    lazy var contentView = SearchDefinitionView(searchDefinitionsDelegate: self)
     
-    lazy var tableView: UITableView = {
-       let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor(named: "LightGray")
-        return tableView
-    }()
-    
-    let headers = [
-        "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
-        "x-rapidapi-key": "90ea48b1d5msh84d3174c6860770p18bd31jsn806c0d897141"
-    ]
+    override func loadView() {
+        view = contentView
+        contentView.tableView.delegate = self
+        contentView.tableView.dataSource = self
+    }
+        
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+extension SearchDefinitionsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        view.backgroundColor = UIColor(named: "DarkGray")
-        
-        view.addSubview(searchTextField)
-        view.addSubview(searchButton)
-        
-        //view.addSubview(tableView)
-
-        setUpConstraints()
+        guard let selectedWord = selectedWord,
+              let resulOfSelectedWord = selectedWordResults?[indexPath.row],
+              let cell = tableView.dequeueReusableCell(withIdentifier: DefinitionTableViewCell.identifier, for: indexPath) as? DefinitionTableViewCell else {
+                  assertionFailure("Only expecting to dequeue \(DefinitionTableViewCell.self) cells")
+                  return UITableViewCell()
+              }
+        cell.updateViews(usingWordResults: resulOfSelectedWord, ofWord: selectedWord)
+        return cell
     }
     
-    private func setUpConstraints() {
-        NSLayoutConstraint.activate([
-            searchTextField.topAnchor.constraint(equalTo: view.topAnchor),
-            searchTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            searchTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
-            searchTextField.heightAnchor.constraint(equalToConstant: 35),
-            
-            searchButton.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor),
-            searchButton.leadingAnchor.constraint(equalTo: searchTextField.trailingAnchor, constant: 10),
-            searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            
-//            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-//            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return selectedWordResults?.count ?? 0
     }
     
-    @objc func searchButtonPressed() {
-        print(searchTextField.text ?? "")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedWord = selectedWord,
+              let selectedWordResults = selectedWordResults?[indexPath.row] else {
+                  assertionFailure("Selectedword unexpectedly found nil")
+                  return
+                  
+              }
+        print("Selected \(selectedWord)!")
+    }
+    
+}
+
+extension SearchDefinitionsViewController: SearchDefinitionsDelegate {
+    
+    func searchDefinitions(forWord word: String?) {
         
-        findDefinitions { word, error in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            DispatchQueue.main.async { [weak self] in
-                print("Success!")
-            }
+        guard let word = word, !word.isEmpty else {
+            presentMissingWordAlert()
+            return
         }
-    }
-    
-    private func findDefinitions(completion: @escaping (Word?, Error?) -> Void) {
-        guard let wordURL = URL(string: "https://wordsapiv1.p.rapidapi.com/words/\(searchTextField.text ?? "default")") else {
+        
+        guard let wordURL = URL(string: "https://wordsapiv1.p.rapidapi.com/words/\(word)") else {
             print("Invalid URL")
             return
         }
+        
+        
+        let headers = [
+            "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+            "x-rapidapi-key": "90ea48b1d5msh84d3174c6860770p18bd31jsn806c0d897141"
+        ]
         
         var urlRequest = URLRequest(url: wordURL)
         urlRequest.httpMethod = "GET"
@@ -104,32 +84,29 @@ class SearchDefinitionsViewController: UIViewController, UITableViewDataSource {
         
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
-                completion(nil, error)
                 return
             }
             
             do {
                 let word = try JSONDecoder().decode(Word.self, from: data)
-                completion(word, error)
-                print(word)
-            }
-            catch {
-                print("Failed to convert \(error.localizedDescription)")
-                completion(nil, error)
-            }
+                DispatchQueue.main.async { [weak self] in
+                    let resultsThatIncludeADefinition = word.results?.filter { $0.definition != nil }
+                    self?.selectedWordResults = resultsThatIncludeADefinition
+                    self?.selectedWord = word.word
+                    self?.contentView.tableView.reloadData()
+                    
+                    }
+                }
+                catch {
+                    print("Failed to decode RandomWord with error: \(error.localizedDescription)")
+                }
             
         }.resume()
     }
     
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.contentView.backgroundColor = UIColor(named: "LightGray")
-        return cell
+    private func presentMissingWordAlert() {
+        let alertController = UIAlertController(title: "", message: "Please enter a word in the text field first to retrieve definitions", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
-    }
-    
 }

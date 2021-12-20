@@ -15,6 +15,9 @@
 		AA39BD2B271118B700FD8787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA39BD29271118B700FD8787 /* LaunchScreen.storyboard */; };
 		AA39BD372711EDC100FD8787 /* RandomWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD362711EDC000FD8787 /* RandomWordViewController.swift */; };
 		AA39BD392711EE3E00FD8787 /* SearchDefinitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD382711EE3E00FD8787 /* SearchDefinitionsViewController.swift */; };
+		AAA75209276FF37A00994CFC /* SearchDefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */; };
+		AAA7520B276FFE8A00994CFC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7520A276FFE8A00994CFC /* Word.swift */; };
+		AAA7520D2770049200994CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		AA39BD2C271118B700FD8787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA39BD362711EDC000FD8787 /* RandomWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordViewController.swift; sourceTree = "<group>"; };
 		AA39BD382711EE3E00FD8787 /* SearchDefinitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefinitionsViewController.swift; sourceTree = "<group>"; };
+		AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefinitionView.swift; sourceTree = "<group>"; };
+		AAA7520A276FFE8A00994CFC /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		AA39BD322711EA9000FD8787 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AAA7520A276FFE8A00994CFC /* Word.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -79,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */,
+				AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */,
+				AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA7520D2770049200994CFC /* DefinitionTableViewCell.swift in Sources */,
+				AAA75209276FF37A00994CFC /* SearchDefinitionView.swift in Sources */,
+				AAA7520B276FFE8A00994CFC /* Word.swift in Sources */,
 				AA39BD23271118B400FD8787 /* ViewController.swift in Sources */,
 				AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */,
 				AA39BD372711EDC100FD8787 /* RandomWordViewController.swift in Sources */,

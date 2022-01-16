@@ -72,12 +72,12 @@ class MainView: UIView {
             randomWordView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor),
             randomWordView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.20),
             
-            bottomViewBorder.topAnchor.constraint(equalTo: randomWordView.bottomAnchor, constant: 10),
+            bottomViewBorder.topAnchor.constraint(equalTo: randomWordView.bottomAnchor, constant: 15),
             bottomViewBorder.leadingAnchor.constraint(equalTo: randomWordView.leadingAnchor),
             bottomViewBorder.trailingAnchor.constraint(equalTo: randomWordView.trailingAnchor),
             bottomViewBorder.heightAnchor.constraint(equalToConstant: 1),
             
-            searchDefinitionView.topAnchor.constraint(equalTo: bottomViewBorder.bottomAnchor, constant: 10),
+            searchDefinitionView.topAnchor.constraint(equalTo: bottomViewBorder.bottomAnchor, constant: 15),
             searchDefinitionView.leadingAnchor.constraint(equalTo: bottomViewBorder.leadingAnchor),
             searchDefinitionView.trailingAnchor.constraint(equalTo: bottomViewBorder.trailingAnchor),
             searchDefinitionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),

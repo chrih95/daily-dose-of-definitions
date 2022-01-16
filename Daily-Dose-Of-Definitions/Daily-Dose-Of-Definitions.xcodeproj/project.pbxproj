@@ -15,6 +15,9 @@
 		AA39BD2B271118B700FD8787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA39BD29271118B700FD8787 /* LaunchScreen.storyboard */; };
 		AA39BD372711EDC100FD8787 /* RandomWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD362711EDC000FD8787 /* RandomWordViewController.swift */; };
 		AA39BD392711EE3E00FD8787 /* SearchDefinitionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD382711EE3E00FD8787 /* SearchDefinitionsViewController.swift */; };
+		AA9CEA3A2780FD6900000CC9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CEA392780FD6900000CC9 /* MainView.swift */; };
+		AA9CEA3C278542D800000CC9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CEA3B278542D800000CC9 /* HeaderView.swift */; };
+		AA9CEA3E278D362000000CC9 /* RandomWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9CEA3D278D362000000CC9 /* RandomWordView.swift */; };
 		AAA75209276FF37A00994CFC /* SearchDefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */; };
 		AAA7520B276FFE8A00994CFC /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7520A276FFE8A00994CFC /* Word.swift */; };
 		AAA7520D2770049200994CFC /* DefinitionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */; };
@@ -31,6 +34,9 @@
 		AA39BD2C271118B700FD8787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA39BD362711EDC000FD8787 /* RandomWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordViewController.swift; sourceTree = "<group>"; };
 		AA39BD382711EE3E00FD8787 /* SearchDefinitionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefinitionsViewController.swift; sourceTree = "<group>"; };
+		AA9CEA392780FD6900000CC9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AA9CEA3B278542D800000CC9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		AA9CEA3D278D362000000CC9 /* RandomWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordView.swift; sourceTree = "<group>"; };
 		AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDefinitionView.swift; sourceTree = "<group>"; };
 		AAA7520A276FFE8A00994CFC /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */,
 				AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */,
 				AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */,
+				AA9CEA392780FD6900000CC9 /* MainView.swift */,
+				AA9CEA3B278542D800000CC9 /* HeaderView.swift */,
+				AA9CEA3D278D362000000CC9 /* RandomWordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,12 +196,15 @@
 				AAA7520D2770049200994CFC /* DefinitionTableViewCell.swift in Sources */,
 				AAA75209276FF37A00994CFC /* SearchDefinitionView.swift in Sources */,
 				AAA7520B276FFE8A00994CFC /* Word.swift in Sources */,
+				AA9CEA3A2780FD6900000CC9 /* MainView.swift in Sources */,
 				AA39BD23271118B400FD8787 /* ViewController.swift in Sources */,
 				AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */,
 				AA39BD372711EDC100FD8787 /* RandomWordViewController.swift in Sources */,
+				AA9CEA3C278542D800000CC9 /* HeaderView.swift in Sources */,
 				AA39BD392711EE3E00FD8787 /* SearchDefinitionsViewController.swift in Sources */,
 				AA39BD1F271118B400FD8787 /* AppDelegate.swift in Sources */,
 				AA39BD21271118B400FD8787 /* SceneDelegate.swift in Sources */,
+				AA9CEA3E278D362000000CC9 /* RandomWordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

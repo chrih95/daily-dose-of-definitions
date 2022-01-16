@@ -21,16 +21,18 @@ class ViewController: UIViewController {
         view = contentView
         
         randomWordViewcontroller.view.translatesAutoresizingMaskIntoConstraints = false
-       // searchDefinitionsViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        searchDefinitionsViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         addChild(randomWordViewcontroller)
-        //addChild(searchDefinitionsViewController)
+        addChild(searchDefinitionsViewController)
         
         contentView.randomWordView.addSubview(randomWordViewcontroller.view)
-        //contentView.searchDefinitionView.addSubview(searchDefinitionsViewController.view)
+        contentView.searchDefinitionView.addSubview(searchDefinitionsViewController.view)
         
         randomWordViewcontroller.didMove(toParent: self)
-        //searchDefinitionsViewController.didMove(toParent: self)
+        searchDefinitionsViewController.didMove(toParent: self)
+        
+        setUpUI()
     }
 
     //MARK: - UI Setup
@@ -50,23 +52,12 @@ class ViewController: UIViewController {
             randomWordViewcontroller.view.bottomAnchor.constraint(equalTo: contentView.randomWordView.bottomAnchor),
             
 
-//            searchDefinitionsViewController.view.topAnchor.constraint(equalTo: contentView.searchDefinitionView.topAnchor),
-//            searchDefinitionsViewController.view.leadingAnchor.constraint(equalTo: contentView.searchDefinitionView.leadingAnchor),
-//            searchDefinitionsViewController.view.trailingAnchor.constraint(equalTo: contentView.searchDefinitionView.trailingAnchor),
-//            searchDefinitionsViewController.view.bottomAnchor.constraint(equalTo: contentView.searchDefinitionView.bottomAnchor),
+            searchDefinitionsViewController.view.topAnchor.constraint(equalTo: contentView.searchDefinitionView.topAnchor),
+            searchDefinitionsViewController.view.leadingAnchor.constraint(equalTo: contentView.searchDefinitionView.leadingAnchor),
+            searchDefinitionsViewController.view.trailingAnchor.constraint(equalTo: contentView.searchDefinitionView.trailingAnchor),
+            searchDefinitionsViewController.view.bottomAnchor.constraint(equalTo: contentView.searchDefinitionView.bottomAnchor),
         ])
     }
 
-}
-
-extension Date {
-    static func getCurrentDate() -> String {
-
-        let dateFormatter = DateFormatter()
-
-        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
-
-        return dateFormatter.string(from: Date())
-    }
 }
 

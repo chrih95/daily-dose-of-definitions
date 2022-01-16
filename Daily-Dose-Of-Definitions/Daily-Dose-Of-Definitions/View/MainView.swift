@@ -21,8 +21,6 @@ class MainView: UIView {
     let randomWordView: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-//        view.backgroundColor = UIColor(named: "LightGray")
-//        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -59,14 +57,14 @@ class MainView: UIView {
         addSubview(headerView)
         addSubview(randomWordView)
         addSubview(bottomViewBorder)
-        // addSubview(searchDefinitionView)
+        addSubview(searchDefinitionView)
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             headerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             headerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             headerView.bottomAnchor.constraint(equalTo: randomWordView.topAnchor, constant: -8),
-            // headerView.heightAnchor.constraint(equalToConstant: 150),
+             headerView.heightAnchor.constraint(equalToConstant: 150),
             
             
             randomWordView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 8),
@@ -75,14 +73,14 @@ class MainView: UIView {
             randomWordView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.20),
             
             bottomViewBorder.topAnchor.constraint(equalTo: randomWordView.bottomAnchor, constant: 10),
-            bottomViewBorder.leadingAnchor.constraint(equalTo: leadingAnchor),
-            bottomViewBorder.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomViewBorder.leadingAnchor.constraint(equalTo: randomWordView.leadingAnchor),
+            bottomViewBorder.trailingAnchor.constraint(equalTo: randomWordView.trailingAnchor),
             bottomViewBorder.heightAnchor.constraint(equalToConstant: 1),
             
-//            searchDefinitionView.topAnchor.constraint(equalTo: bottomViewBorder.bottomAnchor, constant: 10),
-//            searchDefinitionView.leadingAnchor.constraint(equalTo: bottomViewBorder.leadingAnchor),
-//            searchDefinitionView.trailingAnchor.constraint(equalTo: bottomViewBorder.trailingAnchor),
-//            searchDefinitionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            searchDefinitionView.topAnchor.constraint(equalTo: bottomViewBorder.bottomAnchor, constant: 10),
+            searchDefinitionView.leadingAnchor.constraint(equalTo: bottomViewBorder.leadingAnchor),
+            searchDefinitionView.trailingAnchor.constraint(equalTo: bottomViewBorder.trailingAnchor),
+            searchDefinitionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
     }
 }

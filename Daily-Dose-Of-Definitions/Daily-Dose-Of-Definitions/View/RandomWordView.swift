@@ -64,7 +64,7 @@ class RandomWordView: UIView {
     
     // MARK: - Initializers
     
-    init(randomWordGeneratableDelegate: RandomWordGeneratable) {
+    init(randomWordGeneratableDelegate: RandomWordGeneratable?) {
         super.init(frame: .zero)
         
         self.randomWordGeneratableDelegate = randomWordGeneratableDelegate
@@ -93,8 +93,8 @@ class RandomWordView: UIView {
     
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            randomWordLabel.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            randomWordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            randomWordLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            randomWordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             randomWordLabel.trailingAnchor.constraint(equalTo: randomWordDescription.leadingAnchor, constant: -4),
             
             randomWordDescription.leadingAnchor.constraint(equalTo: randomWordLabel.trailingAnchor, constant: 4),
@@ -104,15 +104,13 @@ class RandomWordView: UIView {
             randomWordDefinition.leadingAnchor.constraint(equalTo: randomWordLabel.leadingAnchor),
             randomWordDefinition.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            randomWord.leadingAnchor.constraint(equalTo: randomWordLabel.leadingAnchor),
-            //randomWord.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            
-            
-            //refreshButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            refreshButton.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //refreshButton.bottomAnchor.constraint(equalTo: bottomAnchor),
-            refreshButton.heightAnchor.constraint(equalToConstant: 35),
+            refreshButton.leadingAnchor.constraint(equalTo: randomWordLabel.leadingAnchor),
+            refreshButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            refreshButton.heightAnchor.constraint(equalToConstant: 30),
             refreshButton.widthAnchor.constraint(equalTo: refreshButton.heightAnchor),
+            
+            randomWord.leadingAnchor.constraint(equalTo: refreshButton.trailingAnchor, constant: 5),
+            randomWord.centerYAnchor.constraint(equalTo: refreshButton.centerYAnchor),
         ])
     }
     

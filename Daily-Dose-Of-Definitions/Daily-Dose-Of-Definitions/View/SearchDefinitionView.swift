@@ -39,8 +39,8 @@ class SearchDefinitionView: UIView {
     lazy var tableView: UITableView = {
        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.backgroundColor = UIColor(named: "LightGray")
+        tableView.register(DefinitionTableViewCell.self, forCellReuseIdentifier: DefinitionTableViewCell.identifier)
+        tableView.backgroundColor = UIColor(named: "DarkGray")
         return tableView
     }()
     
@@ -72,17 +72,16 @@ class SearchDefinitionView: UIView {
         NSLayoutConstraint.activate([
             searchTextField.topAnchor.constraint(equalTo: topAnchor),
             searchTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            searchTextField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.75),
-            searchTextField.heightAnchor.constraint(equalToConstant: 35),
+            searchTextField.heightAnchor.constraint(equalToConstant: 50),
             
             searchButton.centerYAnchor.constraint(equalTo: searchTextField.centerYAnchor),
             searchButton.leadingAnchor.constraint(equalTo: searchTextField.trailingAnchor, constant: 10),
-            searchButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            searchButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-//            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-//            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: searchTextField.bottomAnchor, constant: 8),
+            tableView.leadingAnchor.constraint(equalTo: searchTextField.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: searchButton.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     

@@ -25,6 +25,7 @@ class DefinitionTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "happy"
         label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         return label
     }()
     
@@ -33,6 +34,9 @@ class DefinitionTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "marked by good fortune"
         label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 3
         return label
     }()
     
@@ -41,6 +45,7 @@ class DefinitionTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "adjective"
         label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 12, weight: .light)
         return label
     }()
     
@@ -57,7 +62,7 @@ class DefinitionTableViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
-        contentView.backgroundColor = .black
+        contentView.backgroundColor = UIColor(named: "DarkGray")
         
         containerView.addSubview(wordLabel)
         containerView.addSubview(definitionLabel)

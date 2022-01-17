@@ -54,8 +54,9 @@ extension SearchDefinitionsViewController: UITableViewDelegate, UITableViewDataS
                   
               }
         print("Selected \(selectedWord)!")
+        
+        navigationController?.pushViewController(DefinitionDetailsViewController(wordResults: selectedWordResults, word: selectedWord), animated: true)
     }
-    
 }
 
 extension SearchDefinitionsViewController: SearchDefinitionsDelegate {

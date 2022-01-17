@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA19AE2C2794C6930084345B /* DefinitionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19AE2B2794C6930084345B /* DefinitionDetailsViewController.swift */; };
+		AA19AE2F2794D40F0084345B /* DefinitionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19AE2E2794D40F0084345B /* DefinitionDetailView.swift */; };
+		AA19AE312794D7CC0084345B /* WordDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19AE302794D7CC0084345B /* WordDetailsView.swift */; };
 		AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */; };
 		AA39BD1F271118B400FD8787 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD1E271118B400FD8787 /* AppDelegate.swift */; };
 		AA39BD21271118B400FD8787 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA39BD20271118B400FD8787 /* SceneDelegate.swift */; };
@@ -24,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA19AE2B2794C6930084345B /* DefinitionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionDetailsViewController.swift; sourceTree = "<group>"; };
+		AA19AE2E2794D40F0084345B /* DefinitionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionDetailView.swift; sourceTree = "<group>"; };
+		AA19AE302794D7CC0084345B /* WordDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailsView.swift; sourceTree = "<group>"; };
 		AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		AA39BD1B271118B400FD8787 /* Daily-Dose-Of-Definitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Dose-Of-Definitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA39BD1E271118B400FD8787 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA19AE2D2794D3B20084345B /* Definition Detail Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA19AE2E2794D40F0084345B /* DefinitionDetailView.swift */,
+				AA19AE302794D7CC0084345B /* WordDetailsView.swift */,
+			);
+			path = "Definition Detail Views";
+			sourceTree = "<group>";
+		};
 		AA39BD12271118B400FD8787 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +106,7 @@
 		AA39BD332711EA9B00FD8787 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AA19AE2D2794D3B20084345B /* Definition Detail Views */,
 				AA348A93272A41F300D8D4CB /* WordTableViewCell.swift */,
 				AAA75208276FF37A00994CFC /* SearchDefinitionView.swift */,
 				AAA7520C2770049200994CFC /* DefinitionTableViewCell.swift */,
@@ -107,6 +123,7 @@
 				AA39BD22271118B400FD8787 /* ViewController.swift */,
 				AA39BD362711EDC000FD8787 /* RandomWordViewController.swift */,
 				AA39BD382711EE3E00FD8787 /* SearchDefinitionsViewController.swift */,
+				AA19AE2B2794C6930084345B /* DefinitionDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -195,7 +212,9 @@
 			files = (
 				AAA7520D2770049200994CFC /* DefinitionTableViewCell.swift in Sources */,
 				AAA75209276FF37A00994CFC /* SearchDefinitionView.swift in Sources */,
+				AA19AE2C2794C6930084345B /* DefinitionDetailsViewController.swift in Sources */,
 				AAA7520B276FFE8A00994CFC /* Word.swift in Sources */,
+				AA19AE2F2794D40F0084345B /* DefinitionDetailView.swift in Sources */,
 				AA9CEA3A2780FD6900000CC9 /* MainView.swift in Sources */,
 				AA39BD23271118B400FD8787 /* ViewController.swift in Sources */,
 				AA348A94272A41F300D8D4CB /* WordTableViewCell.swift in Sources */,
@@ -205,6 +224,7 @@
 				AA39BD1F271118B400FD8787 /* AppDelegate.swift in Sources */,
 				AA39BD21271118B400FD8787 /* SceneDelegate.swift in Sources */,
 				AA9CEA3E278D362000000CC9 /* RandomWordView.swift in Sources */,
+				AA19AE312794D7CC0084345B /* WordDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
